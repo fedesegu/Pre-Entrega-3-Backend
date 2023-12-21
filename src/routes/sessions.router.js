@@ -1,16 +1,16 @@
-import { hashData, compareData } from "../utils.js";
-import {Router} from "express"
-import passport from "passport"
-import "../passport.js"
-import { generateToken } from "../utils.js"
+// import { hashData, compareData } from "../utils.js";
+// import {Router} from "express"
+// import passport from "passport"
+// import "../passport.js"
+// import { generateToken } from "../utils.js"
 
 
-const router = Router();
+// const router = Router();
 
 
-router.post('/signup', passport.authenticate('signup'),(req, res) => {
-    res.json({message: 'Signed up'})    
-})
+// router.post('/signup', passport.authenticate('signup'),(req, res) => {
+//     res.json({message: 'Signed up'})    
+// })
 
 
 
