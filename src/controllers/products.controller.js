@@ -1,8 +1,6 @@
 import { findAllProds, createProd, findProdById, deleteOneProd, updateProd } from "../services/products.service.js";
 
-
-
-export const findProds = async (req, res) => {
+export const findProdsController = async (req, res) => {
     try{
         const prods = await findAllProds(req.query);
         console.log(prods)
@@ -13,7 +11,7 @@ export const findProds = async (req, res) => {
 };
 
 
-export const findProductById = async (req, res) => {
+export const findProductByIdController = async (req, res) => {
     try{
         const { pid } = req.params;
         const prod = await findProdById(pid);
@@ -27,7 +25,7 @@ export const findProductById = async (req, res) => {
 };
 
 
-export const createProduct =  async (req, res) => {
+export const createProductController =  async (req, res) => {
     const { title, description, price, code, stock, category } = req.body;
 
     if (!title || !description || !price || !code || !stock || ! category) {
@@ -41,7 +39,7 @@ export const createProduct =  async (req, res) => {
     }
     
 };
-export const deleteOneProduct = async (req, res) => {
+export const deleteOneProductController = async (req, res) => {
     const { pid } = req.params;
     try {
         const prod = await deleteOneProd(pid);
@@ -57,7 +55,7 @@ export const deleteOneProduct = async (req, res) => {
 }
 
 
-export const updateProduct = async (req, res) => {
+export const updateProductController = async (req, res) => {
     const { pid } = req.params;
     try {
         const prod = await updateProd(pid, req.body);

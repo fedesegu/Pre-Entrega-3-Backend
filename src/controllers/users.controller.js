@@ -2,7 +2,7 @@ import { findByEmail, findById, createOne } from "../services/users.service.js";
 import passport from "passport";
 
 
-export const findUserById = (req, res) => {
+export const findUserByIdController = (req, res) => {
     passport.authenticate("jwt", { session: false }),
     
     async (req, res) => {
@@ -14,7 +14,7 @@ export const findUserById = (req, res) => {
         res.json({ message: "User", user });
 }};
 
-export const findUserByEmail = async (req, res) => {
+export const findUserByEmailController = async (req, res) => {
     const { UserEmail } = req.body;
     const user = await findByEmail(UserEmail);
     if (!user) {
@@ -23,7 +23,7 @@ export const findUserByEmail = async (req, res) => {
     res.status(200).json({ message: "User found", user });
 };
 
-export const createUser =  async (req, res) => {
+export const createUserController =  async (req, res) => {
     const { name, lastName, email, password } = req.body;
     if (!name || !lastName || !email || !password) {
         return res.status(400).json({ message: "All fields are required" });

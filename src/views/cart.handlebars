@@ -1,20 +1,11 @@
 <h2>CART DETAIL</h2>
 
-<div id="contenedor">
-    {{#each cartProductList}}
-        <h3>{{product.title}}</h3>
-        <p>ID: {{product._id}}</p>
-        <p>Status: {{product.status}}</p>
-        <p>Description: {{product.description}}</p>
-        <p>Price: ${{product.price}}</p>
-        <p>Quantity: {{quantity}}</p>
-        <p>Code: {{product.code}}</p>
-        <p>Stock: {{product.stock}}</p>
-        <p>Category: {{product.category}}</p>        
-        <br>
-        <br>
-    {{/each}}
-</div>
-<br>
-
-<script src="/js/cart.js"></script>
+{{#each cartData}}
+  <h2>{{product.title}}</h2>
+  <p>description:{{product.description}}</p>
+  <p> $:{{product.price}}</p>
+  <p> code:{{code}}</p>
+  <p> {{thumbnails}}</p>
+  <p> ID:{{product._id}}</p>
+  <p> quantity:{{quantity}}</p>
+{{/each}}

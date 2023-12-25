@@ -1,51 +1,21 @@
-{{#if user.isAdmin}}
-    <p id="user-rol">Role: ADMIN ACCOUNT</p>
-{{else}}
-    <p id="user-rol">Role: USER ACCOUNT</p>
-{{/if}}
-<h2 id="user_welcome">Welcome, {{user.first_name}}</h2>
-<p id="user-email">Email: {{user.email}}</p>
+<div class="section">
+    <a class="btn btn-warning" href="/api/sessions/current">Check my roll</a>
+    <h2 class="subtitle is-2">Products are: </h2>
 
-<button id="signout_button"><a href="/api/sessions/signout">SIGN OUT</a></button>
-
-
-
-<h2 id="catalogue_title">CATALOGUE</h2>
-
-<div id="contenedor">
-    {{#each productList}}
-        <div id="card"  style="border-style: solid;border-color:rgb(201, 201, 201)">
-            <img id="image" src="{{thumbnail}}" alt="">
-            <h3 id="prod_title">{{title}}</h3>
-            {{!-- <p id="prod_info">ID: {{_id}}</p> --}}
-            {{!-- <p>Status: {{status}}</p> --}}
-            {{!-- <p>Description: {{description}}</p> --}}
-            <p id="prod_info">Price: ${{price}}</p>
-            {{!-- <p>Code: {{code}}</p> --}}
-            {{!-- <p>Stock: {{stock}}</p> --}}
-            <p id="prod_info">Category: {{category}}</p>
-            <a id="button_verMas" href="/home/{{_id}}">More details</a>
-        </div>         
-    {{/each}}   
+    {{#each products}}
+        <div class="section" >
+            <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{product.thumbnail}}" width="100" alt="{{product.description}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.title}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <p class="card-text">Precio: $ {{product.price}}</p>
+                    <p class="card-text">Stock: {{product.stock}}</p>
+                    <p class="card-text">Category: {{product.category}}</p>
+                    <br>
+                    <button type="button" class="btn btn-success">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    {{/each}}
 </div>
-<div id="pagination_buttons">
-        {{#if prevPage}}
-            {{#if category}}        
-                <a id="pagination_button" href="/home/?limit={{limit}}&page={{prevPage}}&order={{order}}&category={{category}}">Prev Page</a>
-            {{else}}
-                <a id="pagination_button" href="/home/?limit={{limit}}&page={{prevPage}}&order={{order}}">Prev Page</a>
-            {{/if}}
-        {{else}}
-            <p></p>
-        {{/if}}    
-        <p id="pagination_number">Page {{page}}</p>
-        {{#if nextPage}}
-            {{#if category}}
-                <a id="pagination_button" href="/home/?limit={{limit}}&page={{nextPage}}&order={{order}}&category={{category}}">Next Page</a>
-            {{else}}
-                <a id="pagination_button" href="/home/?limit={{limit}}&page={{nextPage}}&order={{order}}">Next Page</a>
-            {{/if}}   
-        {{else}}
-            <p></p>
-        {{/if}}    
-    </div>

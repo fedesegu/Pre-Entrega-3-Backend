@@ -1,13 +1,11 @@
-// import { Router } from "express";
-// import { findProds, findProductById, createProduct, deleteOneProduct, updateProduct } from '../controllers/products.controller.js';
+import { Router } from "express";
+import { findProdsController, findProductByIdController, createProductController, deleteOneProductController, updateProductController } from '../controllers/products.controller.js';
 
-// const router = Router();
-// router.get("/", findProds);
-// router.get('/:pid', findProductById)
-// router.post("/", createProduct);
-// router.delete("/:pid", deleteOneProduct);
-// router.put("/:pid", updateProduct);
+const router = Router();
+router.get("/", findProdsController);
+router.get('/:pid', findProductByIdController)
+router.post("/", createProductController);
+router.delete("/:pid", deleteOneProductController);
+router.put("/:pid", updateProductController);
 
-
-
-// export default router
+export default router
