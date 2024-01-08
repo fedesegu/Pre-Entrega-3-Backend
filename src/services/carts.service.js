@@ -1,7 +1,7 @@
 
 import { cartsModel } from "../config/models/cart.model.js";
-import { cartsManager } from "../DAL/dao/cartsManager.js";
-import { ticketsManager } from "../DAL/dao/ticketsManager.js";
+import { cartsManager } from "../DAL/dao/mongoDB/cartsManagerDB.js";
+import { ticketsManager } from "../DAL/dao/mongoDB/ticketsManagerDB.js";
 import { v4 as uuidv4 } from "uuid";
 
 export const createCart = async () => {

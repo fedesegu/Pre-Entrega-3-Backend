@@ -1,4 +1,4 @@
-import {cartsModel} from '../../config/models/cart.model.js'
+import {cartsModel} from '../../../config/models/cart.model.js'
 
 class CartsManager {
     async createCart() {

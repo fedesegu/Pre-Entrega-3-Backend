@@ -2,7 +2,7 @@ import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import { Strategy as GithubStrategy } from "passport-github2";
 import { ExtractJwt, Strategy as JWTStrategy } from "passport-jwt";
-import { usersManager } from "../src/DAL/dao/usersManager.js";
+import { usersManager } from "../src/DAL/dao/mongoDB/usersManagerDB.js";
 import { hashData, compareData } from "./utils.js";
 
 passport.use('signup', new LocalStrategy({

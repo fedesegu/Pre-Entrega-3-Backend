@@ -1,4 +1,4 @@
-import { usersManager } from "../DAL/dao/usersManager.js";
+import { usersManager } from "../DAL/dao/mongoDB/usersManagerDB.js";
 import { hashData } from "../utils.js";
 
 export const findAll = async () => {
